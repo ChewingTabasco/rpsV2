@@ -8,3 +8,18 @@ function computerPlay() {
     return "Scissors";
   }
 }
+
+function playRound(playerSelection, computerSelection) {
+  const playerSel = playerSelection.toLowerCase();
+  const compSel = computerSelection.toLowerCase();
+
+  console.log(
+    `your choice is: ${playerSel}, and the computer's choice is ${compSel}.`
+  );
+
+  if (
+    !(playerSel === "rock" || playerSel === "paper" || playerSel === "scissors")
+  ) {
+    return `${playerSelection} is not a valid choice.`;
+  }
+}
