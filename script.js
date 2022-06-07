@@ -13,13 +13,23 @@ function playRound(playerSelection, computerSelection) {
   const playerSel = playerSelection.toLowerCase();
   const compSel = computerSelection.toLowerCase();
 
-  console.log(
-    `your choice is: ${playerSel}, and the computer's choice is ${compSel}.`
-  );
-
   if (
     !(playerSel === "rock" || playerSel === "paper" || playerSel === "scissors")
   ) {
     return `${playerSelection} is not a valid choice.`;
+  } else {
+    if (playerSel === compSel) {
+      return `Tie game. You both played ${playerSel}.`;
+    } else {
+      if (
+        (playerSel === "rock" && compSel === "scissors") ||
+        (playerSel === "paper" && compSel === "rock") ||
+        (playerSel === "scissors" && compSel === "paper")
+      ) {
+        return `You win! ${playerSel} beats ${compSel}!`;
+      } else {
+        return `You lose. ${compSel} beats ${playerSel}.`;
+      }
+    }
   }
 }
