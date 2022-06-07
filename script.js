@@ -37,8 +37,12 @@ function playRound(playerSelection, computerSelection) {
         (playerSel === "paper" && compSel === "rock") ||
         (playerSel === "scissors" && compSel === "paper")
       ) {
+        incrementPlayerScore();
+        console.log(playerScore);
         return `You win! ${playerSel} beats ${compSel}!`;
       } else {
+        incrementComputerScore();
+        console.log(computerScore);
         return `You lose. ${compSel} beats ${playerSel}.`;
       }
     }
@@ -46,6 +50,9 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {
+  playerScore = 0;
+  computerScore = 0;
+
   for (let i = 1; i < 6; i++) {
     console.log(playRound(prompt("Make your move:"), computerPlay()));
   }
