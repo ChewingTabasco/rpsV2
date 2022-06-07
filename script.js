@@ -1,3 +1,10 @@
+let playerScore;
+let computerScore;
+
+function incrementPlayerScore() {
+  playerScore += 1;
+}
+
 function computerPlay() {
   let randomNumber = Math.floor(Math.random() * 3);
   if (randomNumber === 0) {
