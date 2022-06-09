@@ -27,7 +27,7 @@ function playRound(playerSelection, computerSelection) {
   if (
     !(playerSel === "rock" || playerSel === "paper" || playerSel === "scissors")
   ) {
-    return `${playerSelection} is not a valid choice.`;
+    console.log(`${playerSelection} is not a valid choice.`);
   } else {
     if (playerSel === compSel) {
       return `Tie game. You both played ${playerSel}.`;
@@ -53,12 +53,25 @@ function getWinner() {
   return playerScore > computerScore ? `You Win!` : `You lose.`;
 }
 
+// function getPlayerSelection() {
+//   let selection = prompt("Make your move:");
+
+//   if (
+//     !(selection === "rock" || selection === "paper" || selection === "scissors")
+//   ) {
+//     console.log(`${selection} is not a valid choice.`);
+//     getPlayerSelection();
+//   } else {
+//     return selection;
+//   }
+// }
+
 function game() {
   playerScore = 0;
   computerScore = 0;
 
   for (let i = 1; i < 6; i++) {
-    console.log(playRound(prompt("Make your move:"), computerPlay()));
+    console.log(playRound(getPlayerSelection(), computerPlay()));
   }
 
   console.log(`
