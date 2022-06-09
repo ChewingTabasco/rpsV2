@@ -49,6 +49,10 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
+function getWinner() {
+  return playerScore > computerScore ? `You Win!` : `You lose.`;
+}
+
 function game() {
   playerScore = 0;
   computerScore = 0;
