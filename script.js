@@ -60,4 +60,9 @@ function game() {
   for (let i = 1; i < 6; i++) {
     console.log(playRound(prompt("Make your move:"), computerPlay()));
   }
+
+  console.log(`
+  Your score: ${playerScore}
+  Computer score: ${computerScore}
+  ${getWinner()}`);
 }
