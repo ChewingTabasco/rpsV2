@@ -59,7 +59,7 @@ function getPlayerSelection(roundNumber) {
     !(selection === "rock" || selection === "paper" || selection === "scissors")
   ) {
     console.log(`${selection} is not a valid choice.`);
-    return getPlayerSelection();
+    return getPlayerSelection(roundNumber);
   } else {
     return selection;
   }
