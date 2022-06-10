@@ -44,7 +44,11 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function getWinner() {
-  return playerScore > computerScore ? `You Win!` : `You lose.`;
+  if (!(playerScore === computerScore)) {
+    return playerScore > computerScore ? `You Win!` : `You lose.`;
+  } else {
+    return `Tie Game.`;
+  }
 }
 
 function getPlayerSelection(roundNumber) {
