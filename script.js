@@ -25,7 +25,8 @@ function playRound(playerSelection, computerSelection) {
   const compSel = computerSelection.toLowerCase();
 
   if (playerSel === compSel) {
-    return `Tie game. You both played ${playerSel}.`;
+    return `Tie game. You both played ${playerSel}.
+    ${getScores()}`;
   } else {
     if (
       (playerSel === "rock" && compSel === "scissors") ||
