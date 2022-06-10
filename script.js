@@ -53,18 +53,18 @@ function getWinner() {
   return playerScore > computerScore ? `You Win!` : `You lose.`;
 }
 
-// function getPlayerSelection() {
-//   let selection = prompt("Make your move:");
+function getPlayerSelection() {
+  let selection = prompt("Make your move:");
 
-//   if (
-//     !(selection === "rock" || selection === "paper" || selection === "scissors")
-//   ) {
-//     console.log(`${selection} is not a valid choice.`);
-//     getPlayerSelection();
-//   } else {
-//     return selection;
-//   }
-// }
+  if (
+    !(selection === "rock" || selection === "paper" || selection === "scissors")
+  ) {
+    console.log(`${selection} is not a valid choice.`);
+    return getPlayerSelection();
+  } else {
+    return selection;
+  }
+}
 
 function game() {
   playerScore = 0;
