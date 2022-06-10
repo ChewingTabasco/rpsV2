@@ -67,14 +67,13 @@ function firstLetterUpper(string) {
 }
 
 function getPlayerSelection(roundNumber) {
+  const lowerSel = selection.toLowerCase();
   let selection = prompt(`
   Round ${roundNumber} of 5
   Make your move:
   -rock
   -paper
   -scissors`);
-
-  const lowerSel = selection.toLowerCase();
 
   if (
     !(lowerSel === "rock" || lowerSel === "paper" || lowerSel === "scissors")
