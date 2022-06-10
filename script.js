@@ -49,6 +49,10 @@ function getWinner() {
   }
 }
 
+function getScores() {
+  return `Score: ${playerScore} | ${computerScore}`;
+}
+
 function getPlayerSelection(roundNumber) {
   let selection = prompt(`
   Round ${roundNumber} of 5
