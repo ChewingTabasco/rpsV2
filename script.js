@@ -24,27 +24,21 @@ function playRound(playerSelection, computerSelection) {
   const playerSel = playerSelection.toLowerCase();
   const compSel = computerSelection.toLowerCase();
 
-  if (
-    !(playerSel === "rock" || playerSel === "paper" || playerSel === "scissors")
-  ) {
-    console.log(`${playerSelection} is not a valid choice.`);
+  if (playerSel === compSel) {
+    return `Tie game. You both played ${playerSel}.`;
   } else {
-    if (playerSel === compSel) {
-      return `Tie game. You both played ${playerSel}.`;
+    if (
+      (playerSel === "rock" && compSel === "scissors") ||
+      (playerSel === "paper" && compSel === "rock") ||
+      (playerSel === "scissors" && compSel === "paper")
+    ) {
+      incrementPlayerScore();
+      console.log(playerScore);
+      return `You win! ${playerSel} beats ${compSel}!`;
     } else {
-      if (
-        (playerSel === "rock" && compSel === "scissors") ||
-        (playerSel === "paper" && compSel === "rock") ||
-        (playerSel === "scissors" && compSel === "paper")
-      ) {
-        incrementPlayerScore();
-        console.log(playerScore);
-        return `You win! ${playerSel} beats ${compSel}!`;
-      } else {
-        incrementComputerScore();
-        console.log(computerScore);
-        return `You lose. ${compSel} beats ${playerSel}.`;
-      }
+      incrementComputerScore();
+      console.log(computerScore);
+      return `You lose. ${compSel} beats ${playerSel}.`;
     }
   }
 }
