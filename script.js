@@ -64,13 +64,15 @@ function getPlayerSelection(roundNumber) {
   -paper
   -scissors`);
 
+  const lowerSel = selection.toLowerCase();
+
   if (
-    !(selection === "rock" || selection === "paper" || selection === "scissors")
+    !(lowerSel === "rock" || lowerSel === "paper" || lowerSel === "scissors")
   ) {
     console.log(`${selection} is not a valid choice.`);
     return getPlayerSelection(roundNumber);
   } else {
-    return selection;
+    return lowerSel;
   }
 }
 
