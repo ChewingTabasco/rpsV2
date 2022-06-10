@@ -23,6 +23,11 @@ function computerPlay() {
 function playRound(playerSelection, computerSelection) {
   const compSel = computerSelection.toLowerCase();
 
+  // Skip round if prompt is canceled
+  if (playerSelection === undefined) {
+    return;
+  }
+
   if (playerSelection === compSel) {
     return `Tie game. You both played ${playerSelection}.
     ${getScores()}`;
@@ -74,7 +79,14 @@ function getPlayerSelection(roundNumber) {
   -paper
   -scissors`);
 
-  const lowerSel = selection.toLowerCase();
+  let lowerSel;
+
+  // Only changes case if user inputs a value
+  if (!(selection === null)) {
+    lowerSel = selection.toLowerCase();
+  } else {
+    return;
+  }
 
   if (
     !(lowerSel === "rock" || lowerSel === "paper" || lowerSel === "scissors")
@@ -91,7 +103,14 @@ function game() {
   computerScore = 0;
 
   for (let i = 1; i < 6; i++) {
-    console.log(playRound(getPlayerSelection(i), computerPlay()));
+    // console.log(playRound(getPlayerSelection(i), computerPlay()));
+
+    playRound(getPlayerSelection(i), computerPlay());
+
+    // if (getPlayerSelection(i) === undefined) {
+    //   console.log("detected here");
+    //   return;
+    // }
   }
 
   console.log(`
