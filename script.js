@@ -55,6 +55,13 @@ function getScores() {
   return `Score: ${playerScore} | ${computerScore}`;
 }
 
+function firstLetterUpper(string) {
+  const firstLetter = string.substr(0, 1);
+  const restOfString = string.substr(1);
+  const newStr = firstLetter.toUpperCase() + restOfString;
+  return newStr;
+}
+
 function getPlayerSelection(roundNumber) {
   let selection = prompt(`
   Round ${roundNumber} of 5
