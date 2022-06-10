@@ -12,11 +12,11 @@ function incrementComputerScore() {
 function computerPlay() {
   let randomNumber = Math.floor(Math.random() * 3);
   if (randomNumber === 0) {
-    return "Rock";
+    return "rock";
   } else if (randomNumber === 1) {
-    return "Paper";
+    return "paper";
   } else {
-    return "Scissors";
+    return "scissors";
   }
 }
 
