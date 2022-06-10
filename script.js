@@ -103,9 +103,7 @@ function game() {
   computerScore = 0;
 
   for (let i = 1; i < 6; i++) {
-    // console.log(playRound(getPlayerSelection(i), computerPlay()));
-
-    playRound(getPlayerSelection(i), computerPlay());
+    console.log(playRound(getPlayerSelection(i), computerPlay()));
 
     // if (getPlayerSelection(i) === undefined) {
     //   console.log("detected here");
