@@ -53,8 +53,13 @@ function getWinner() {
   return playerScore > computerScore ? `You Win!` : `You lose.`;
 }
 
-function getPlayerSelection() {
-  let selection = prompt("Make your move:");
+function getPlayerSelection(roundNumber) {
+  let selection = prompt(`
+  Round ${roundNumber} of 5
+  Make your move:
+  -rock
+  -paper
+  -scissors`);
 
   if (
     !(selection === "rock" || selection === "paper" || selection === "scissors")
@@ -71,7 +76,7 @@ function game() {
   computerScore = 0;
 
   for (let i = 1; i < 6; i++) {
-    console.log(playRound(getPlayerSelection(), computerPlay()));
+    console.log(playRound(getPlayerSelection(i), computerPlay()));
   }
 
   console.log(`
