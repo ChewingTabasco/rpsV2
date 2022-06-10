@@ -21,24 +21,23 @@ function computerPlay() {
 }
 
 function playRound(playerSelection, computerSelection) {
-  const playerSel = playerSelection.toLowerCase();
   const compSel = computerSelection.toLowerCase();
 
-  if (playerSel === compSel) {
-    return `Tie game. You both played ${playerSel}.
+  if (playerSelection === compSel) {
+    return `Tie game. You both played ${playerSelection}.
     ${getScores()}`;
   } else {
     if (
-      (playerSel === "rock" && compSel === "scissors") ||
-      (playerSel === "paper" && compSel === "rock") ||
-      (playerSel === "scissors" && compSel === "paper")
+      (playerSelection === "rock" && compSel === "scissors") ||
+      (playerSelection === "paper" && compSel === "rock") ||
+      (playerSelection === "scissors" && compSel === "paper")
     ) {
       incrementPlayerScore();
-      return `You win! ${playerSel} beats ${compSel}!
+      return `You win! ${playerSelection} beats ${compSel}!
       ${getScores()}`;
     } else {
       incrementComputerScore();
-      return `You lose. ${compSel} beats ${playerSel}.
+      return `You lose. ${compSel} beats ${playerSelection}.
       ${getScores()}`;
     }
   }
