@@ -33,11 +33,11 @@ function playRound(playerSelection, computerSelection) {
       (playerSelection === "scissors" && compSel === "paper")
     ) {
       incrementPlayerScore();
-      return `You win! ${playerSelection} beats ${compSel}!
+      return `You win! ${playerSelection} beats ${computerSelection}!
       ${getScores()}`;
     } else {
       incrementComputerScore();
-      return `You lose. ${compSel} beats ${playerSelection}.
+      return `You lose. ${computerSelection} beats ${playerSelection}.
       ${getScores()}`;
     }
   }
