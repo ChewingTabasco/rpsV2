@@ -103,12 +103,14 @@ function game() {
   computerScore = 0;
 
   for (let i = 1; i < 6; i++) {
-    console.log(playRound(getPlayerSelection(i), computerPlay()));
+    const playerSel = getPlayerSelection(i);
 
-    // if (getPlayerSelection(i) === undefined) {
-    //   console.log("detected here");
-    //   return;
-    // }
+    if (playerSel === undefined) {
+      console.log("Game Ended.");
+      break;
+    } else {
+      console.log(playRound(playerSel, computerPlay()));
+    }
   }
 
   console.log(`
