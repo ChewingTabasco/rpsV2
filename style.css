@@ -16,4 +16,12 @@
 
 #cta-container {
   margin-top: 50px;
+  border: 2px solid rgb(44, 44, 44);
+  border-radius: 5px;
+  height: 150px;
+  width: 1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
