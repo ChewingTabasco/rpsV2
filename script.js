@@ -102,19 +102,22 @@ function game() {
   playerScore = 0;
   computerScore = 0;
 
+  let gameMessage = "Game Ended.";
+
   for (let i = 1; i < 6; i++) {
     const playerSel = getPlayerSelection(i);
 
     if (playerSel === undefined) {
-      console.log("Game Ended.");
+      gameMessage = "You exited the game.";
       break;
     } else {
       console.log(playRound(playerSel, computerPlay()));
     }
   }
 
-  console.log(`
-  Your score: ${playerScore}
-  Computer score: ${computerScore}
-  ${getWinner()}`);
+  console.log(`${gameMessage}
+
+Your score: ${playerScore}
+Computer score: ${computerScore}
+${getWinner()}`);
 }
