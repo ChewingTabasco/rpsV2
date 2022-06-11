@@ -33,7 +33,7 @@ function playRound(playerSelection, computerSelection) {
   }
 
   if (playerSelection === compSel) {
-    return `Tie game. You both played ${playerSelection}.
+    return `Tie game. You both played ${computerSelection}.
     ${getScores()}`;
   } else {
     if (
