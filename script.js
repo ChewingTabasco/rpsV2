@@ -73,56 +73,11 @@ function firstLetterUpper(string) {
   return newStr;
 }
 
-// function getPlayerSelection(roundNumber) {
-//   let selection = prompt(`
-//   Round ${roundNumber} of 5
-//   Make your move:
-//   -rock
-//   -paper
-//   -scissors`);
-
-//   let lowerSel;
-
-//   // Only changes case if user inputs a value
-//   if (!(selection === null)) {
-//     lowerSel = selection.toLowerCase();
-//   } else {
-//     return;
-//   }
-
-//   if (
-//     !(lowerSel === "rock" || lowerSel === "paper" || lowerSel === "scissors")
-//   ) {
-//     console.log(`${selection} is not a valid choice.`);
-//     return getPlayerSelection(roundNumber);
-//   } else {
-//     return lowerSel;
-//   }
-// }
-
-// function game() {
-//   playerScore = 0;
-//   computerScore = 0;
-
-//   let gameMessage = "Game Ended.";
-
-//   for (let i = 1; i < 6; i++) {
-//     const playerSel = getPlayerSelection(i);
-
-//     if (playerSel === undefined) {
-//       gameMessage = "You exited the game.";
-//       break;
-//     } else {
-//       console.log(playRound(playerSel, computerPlay()));
-//     }
-//   }
-
 //   console.log(`${gameMessage}
 
 // Your score: ${playerScore}
 // Computer score: ${computerScore}
 // ${getWinner()}`);
-// }
 
 selectionBtns.forEach((btn) =>
   btn.addEventListener("click", (e) => {
