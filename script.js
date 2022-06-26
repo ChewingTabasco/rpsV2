@@ -1,10 +1,6 @@
 let playerScore;
 let computerScore;
 
-const ctaButton = document.getElementById("cta-button");
-
-ctaButton.addEventListener("click", game);
-
 function incrementPlayerScore() {
   playerScore += 1;
 }
