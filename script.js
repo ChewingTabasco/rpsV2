@@ -1,6 +1,8 @@
 let playerScore;
 let computerScore;
 
+const selectionBtns = document.querySelectorAll(".selection-btn");
+
 function incrementPlayerScore() {
   playerScore += 1;
 }
