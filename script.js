@@ -26,6 +26,18 @@ function computerPlay() {
 function playRound(playerSelection, computerSelection) {
   const compSel = computerSelection.toLowerCase();
 
+  //   if (playerScore === 5 || computerScore === 5) {
+  //     let playerEndScore = playerScore;
+  //     let compEndScore = computerScore;
+
+  //     playerScore = 0;
+  //     computerScore = 0;
+  //     return `
+  //  Your score: ${playerEndScore}
+  //  Computer score: ${compScore}
+  //  ${getWinner()}`;
+  //   }
+
   // Skip round if prompt is canceled
   if (playerSelection === undefined) {
     return;
@@ -55,13 +67,13 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-// function getWinner() {
-//   if (!(playerScore === computerScore)) {
-//     return playerScore > computerScore ? `You Win!` : `You lose.`;
-//   } else {
-//     return `Tie Game.`;
-//   }
-// }
+function getWinner() {
+  if (!(playerScore === computerScore)) {
+    return playerScore > computerScore ? `You Win!` : `You lose.`;
+  } else {
+    return `Tie Game.`;
+  }
+}
 
 function getScores() {
   return `Score: ${playerScore} | ${computerScore}`;
