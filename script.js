@@ -1,5 +1,5 @@
-let playerScore;
-let computerScore;
+let playerScore = 0;
+let computerScore = 0;
 
 const selectionBtns = document.querySelectorAll(".selection-btn");
 
