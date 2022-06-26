@@ -2,6 +2,7 @@ let playerScore = 0;
 let computerScore = 0;
 
 const selectionBtns = document.querySelectorAll(".selection-btn");
+const gameDisplay = document.querySelector("#game-display");
 
 function incrementPlayerScore() {
   playerScore += 1;
