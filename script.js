@@ -82,6 +82,7 @@ function firstLetterUpper(string) {
 
 selectionBtns.forEach((btn) =>
   btn.addEventListener("click", (e) => {
-    console.log(playRound(e.target.id, computerPlay()));
+    // console.log(playRound(e.target.id, computerPlay()));
+    gameDisplay.textContent = `${playRound(e.target.id, computerPlay())}`;
   })
 );
