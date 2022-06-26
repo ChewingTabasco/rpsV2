@@ -54,13 +54,13 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-function getWinner() {
-  if (!(playerScore === computerScore)) {
-    return playerScore > computerScore ? `You Win!` : `You lose.`;
-  } else {
-    return `Tie Game.`;
-  }
-}
+// function getWinner() {
+//   if (!(playerScore === computerScore)) {
+//     return playerScore > computerScore ? `You Win!` : `You lose.`;
+//   } else {
+//     return `Tie Game.`;
+//   }
+// }
 
 function getScores() {
   return `Score: ${playerScore} | ${computerScore}`;
@@ -73,53 +73,59 @@ function firstLetterUpper(string) {
   return newStr;
 }
 
-function getPlayerSelection(roundNumber) {
-  let selection = prompt(`
-  Round ${roundNumber} of 5
-  Make your move:
-  -rock
-  -paper
-  -scissors`);
+// function getPlayerSelection(roundNumber) {
+//   let selection = prompt(`
+//   Round ${roundNumber} of 5
+//   Make your move:
+//   -rock
+//   -paper
+//   -scissors`);
 
-  let lowerSel;
+//   let lowerSel;
 
-  // Only changes case if user inputs a value
-  if (!(selection === null)) {
-    lowerSel = selection.toLowerCase();
-  } else {
-    return;
-  }
+//   // Only changes case if user inputs a value
+//   if (!(selection === null)) {
+//     lowerSel = selection.toLowerCase();
+//   } else {
+//     return;
+//   }
 
-  if (
-    !(lowerSel === "rock" || lowerSel === "paper" || lowerSel === "scissors")
-  ) {
-    console.log(`${selection} is not a valid choice.`);
-    return getPlayerSelection(roundNumber);
-  } else {
-    return lowerSel;
-  }
-}
+//   if (
+//     !(lowerSel === "rock" || lowerSel === "paper" || lowerSel === "scissors")
+//   ) {
+//     console.log(`${selection} is not a valid choice.`);
+//     return getPlayerSelection(roundNumber);
+//   } else {
+//     return lowerSel;
+//   }
+// }
 
-function game() {
-  playerScore = 0;
-  computerScore = 0;
+// function game() {
+//   playerScore = 0;
+//   computerScore = 0;
 
-  let gameMessage = "Game Ended.";
+//   let gameMessage = "Game Ended.";
 
-  for (let i = 1; i < 6; i++) {
-    const playerSel = getPlayerSelection(i);
+//   for (let i = 1; i < 6; i++) {
+//     const playerSel = getPlayerSelection(i);
 
-    if (playerSel === undefined) {
-      gameMessage = "You exited the game.";
-      break;
-    } else {
-      console.log(playRound(playerSel, computerPlay()));
-    }
-  }
+//     if (playerSel === undefined) {
+//       gameMessage = "You exited the game.";
+//       break;
+//     } else {
+//       console.log(playRound(playerSel, computerPlay()));
+//     }
+//   }
 
-  console.log(`${gameMessage}
+//   console.log(`${gameMessage}
 
-Your score: ${playerScore}
-Computer score: ${computerScore}
-${getWinner()}`);
-}
+// Your score: ${playerScore}
+// Computer score: ${computerScore}
+// ${getWinner()}`);
+// }
+
+selectionBtns.forEach((btn) =>
+  btn.addEventListener("click", (e) => {
+    console.log(playRound(e.target.id, computerPlay()));
+  })
+);
