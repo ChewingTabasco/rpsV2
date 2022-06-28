@@ -24,17 +24,16 @@ function computerPlay() {
 }
 
 function playRound(playerSelection, computerSelection) {
-  //   if (playerScore === 5 || computerScore === 5) {
-  //     let playerEndScore = playerScore;
-  //     let compEndScore = computerScore;
-
-  //     playerScore = 0;
-  //     computerScore = 0;
-  //     return `
-  //  Your score: ${playerEndScore}
+  //  `Your score: ${playerEndScore}
   //  Computer score: ${compScore}
   //  ${getWinner()}`;
   //   }
+
+  if (playerScore == 5 || computerScore == 5) {
+    return `Your score: ${playerScore}
+  Computer score: ${computerScore}
+  ${getWinner()}`;
+  }
 
   if (playerSelection === computerSelection) {
     return `Tie game. You both played ${computerSelection}.
@@ -66,15 +65,29 @@ function getScores() {
   return `Score: ${playerScore} | ${computerScore}`;
 }
 
-//   console.log(`${gameMessage}
+function checkIfRoundLimitReached() {
+  if (playerScore == 5 || computerScore == 5) return true;
+  return false;
+}
 
-// Your score: ${playerScore}
-// Computer score: ${computerScore}
-// ${getWinner()}`);
+function resetScores() {
+  playerScore = 0;
+  computerScore = 0;
+}
+
+function getEndGameText() {
+  return `Your score: ${playerScore}
+  Computer score: ${computerScore}
+  ${getWinner()}`;
+}
 
 selectionBtns.forEach((btn) =>
   btn.addEventListener("click", (e) => {
-    // console.log(playRound(e.target.id, computerPlay()));
-    gameDisplay.textContent = `${playRound(e.target.id, computerPlay())}`;
+    if (checkIfRoundLimitReached()) {
+      gameDisplay.textContent = `${getEndGameText()}`;
+      resetScores();
+    } else {
+      gameDisplay.textContent = `${playRound(e.target.id, computerPlay())}`;
+    }
   })
 );
