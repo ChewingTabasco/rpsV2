@@ -24,8 +24,6 @@ function computerPlay() {
 }
 
 function playRound(playerSelection, computerSelection) {
-  const compSel = computerSelection.toLowerCase();
-
   //   if (playerScore === 5 || computerScore === 5) {
   //     let playerEndScore = playerScore;
   //     let compEndScore = computerScore;
@@ -38,28 +36,20 @@ function playRound(playerSelection, computerSelection) {
   //  ${getWinner()}`;
   //   }
 
-  // Skip round if prompt is canceled
-
-  if (playerSelection === compSel) {
+  if (playerSelection === computerSelection) {
     return `Tie game. You both played ${computerSelection}.
     ${getScores()}`;
   } else {
     if (
-      (playerSelection === "rock" && compSel === "scissors") ||
-      (playerSelection === "paper" && compSel === "rock") ||
-      (playerSelection === "scissors" && compSel === "paper")
+      (playerSelection === "Rock" && computerSelection === "Scissors") ||
+      (playerSelection === "Paper" && computerSelection === "Rock") ||
+      (playerSelection === "Scissors" && computerSelection === "Paper")
     ) {
       incrementPlayerScore();
-      return `You win! ${firstLetterUpper(
-        playerSelection
-      )} beats ${computerSelection}!
-      ${getScores()}`;
+      return `You win! ${playerSelection} beats ${computerSelection}! ${getScores()}`;
     } else {
       incrementComputerScore();
-      return `You lose. ${computerSelection} beats ${firstLetterUpper(
-        playerSelection
-      )}.
-      ${getScores()}`;
+      return `You lose. ${computerSelection} beats ${playerSelection}. ${getScores()}`;
     }
   }
 }
@@ -74,13 +64,6 @@ function getWinner() {
 
 function getScores() {
   return `Score: ${playerScore} | ${computerScore}`;
-}
-
-function firstLetterUpper(string) {
-  const firstLetter = string.substr(0, 1);
-  const restOfString = string.substr(1);
-  const newStr = firstLetter.toUpperCase() + restOfString;
-  return newStr;
 }
 
 //   console.log(`${gameMessage}
