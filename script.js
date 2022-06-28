@@ -39,9 +39,6 @@ function playRound(playerSelection, computerSelection) {
   //   }
 
   // Skip round if prompt is canceled
-  if (playerSelection === undefined) {
-    return;
-  }
 
   if (playerSelection === compSel) {
     return `Tie game. You both played ${computerSelection}.
