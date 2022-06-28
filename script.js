@@ -24,17 +24,6 @@ function computerPlay() {
 }
 
 function playRound(playerSelection, computerSelection) {
-  //  `Your score: ${playerEndScore}
-  //  Computer score: ${compScore}
-  //  ${getWinner()}`;
-  //   }
-
-  if (playerScore == 5 || computerScore == 5) {
-    return `Your score: ${playerScore}
-  Computer score: ${computerScore}
-  ${getWinner()}`;
-  }
-
   if (playerSelection === computerSelection) {
     return `Tie game. You both played ${computerSelection}.
     ${getScores()}`;
