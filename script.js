@@ -34,9 +34,19 @@ function playRound(playerSelection, computerSelection) {
       (playerSelection === "Scissors" && computerSelection === "Paper")
     ) {
       incrementPlayerScore();
+      if (checkIfRoundLimitReached()) {
+        let endReturnValue = getEndGameText();
+        resetScores();
+        return endReturnValue;
+      }
       return `You win! ${playerSelection} beats ${computerSelection}! ${getScores()}`;
     } else {
       incrementComputerScore();
+      if (checkIfRoundLimitReached()) {
+        let endReturnValue = getEndGameText();
+        resetScores();
+        return endReturnValue;
+      }
       return `You lose. ${computerSelection} beats ${playerSelection}. ${getScores()}`;
     }
   }
@@ -72,11 +82,6 @@ function getEndGameText() {
 
 selectionBtns.forEach((btn) =>
   btn.addEventListener("click", (e) => {
-    if (checkIfRoundLimitReached()) {
-      gameDisplay.textContent = `${getEndGameText()}`;
-      resetScores();
-    } else {
-      gameDisplay.textContent = `${playRound(e.target.id, computerPlay())}`;
-    }
+    gameDisplay.textContent = `${playRound(e.target.id, computerPlay())}`;
   })
 );
