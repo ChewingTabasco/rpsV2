@@ -75,7 +75,7 @@ function resetScores() {
 }
 
 function getEndGameText() {
-  return `Your score: ${playerScore}
+  return `Game End. Your score: ${playerScore}
   Computer score: ${computerScore}
   ${getWinner()}`;
 }
