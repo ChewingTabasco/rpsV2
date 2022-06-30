@@ -26,7 +26,7 @@ function computerPlay() {
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
     return `
-Tie game. No points awarded.
+Round Tie. No points awarded.
 You both played ${computerSelection}.
 ${getScores()}`;
   } else {
@@ -42,7 +42,8 @@ ${getScores()}`;
         return endReturnValue;
       }
       return `
-You win! ${playerSelection} beats ${computerSelection}!
+You win!
+${playerSelection} beats ${computerSelection}!
 ${getScores()}`;
     } else {
       incrementComputerScore();
@@ -52,7 +53,8 @@ ${getScores()}`;
         return endReturnValue;
       }
       return `
-You lose. ${computerSelection} beats ${playerSelection}.
+You lose.
+${computerSelection} beats ${playerSelection}.
 ${getScores()}`;
     }
   }
