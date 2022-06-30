@@ -9,7 +9,7 @@
   width: 700px;
   border: 2px solid;
   border-radius: 5px;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .selection-btn {
