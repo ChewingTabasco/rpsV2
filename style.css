@@ -13,7 +13,7 @@ body {
 
 #game-wrapper {
   display: flex;
-  width: 700px;
+  width: 750px;
   border: 2px solid;
   border-radius: 5px;
   justify-content: space-between;
@@ -21,11 +21,12 @@ body {
 }
 
 .selection-btn {
-  width: 75px;
-  height: 75px;
-  font-size: large;
+  width: 130px;
+  height: 130px;
+  font-size: x-large;
 }
 
 #game-display {
   white-space: pre;
+  font-size: large;
 }
