@@ -25,7 +25,7 @@ function computerPlay() {
 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
-    return `Tie game. You both played ${computerSelection}.
+    return `Tie game. No points awarded. You both played ${computerSelection}.
     ${getScores()}`;
   } else {
     if (
