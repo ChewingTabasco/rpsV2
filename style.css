@@ -11,7 +11,7 @@ body {
   align-items: center;
 }
 
-#game-wrapper {
+#display-wrapper {
   display: flex;
   width: 750px;
   border: 2px solid;
