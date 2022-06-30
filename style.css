@@ -11,6 +11,11 @@ body {
   align-items: center;
 }
 
+header {
+  font-size: 48px;
+  font-weight: bold;
+}
+
 #display-wrapper {
   display: flex;
   width: 750px;
