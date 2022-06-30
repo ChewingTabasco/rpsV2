@@ -10,6 +10,7 @@
   border: 2px solid;
   border-radius: 5px;
   justify-content: space-between;
+  padding: 5px;
 }
 
 .selection-btn {
