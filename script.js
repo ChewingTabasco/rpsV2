@@ -25,7 +25,9 @@ function computerPlay() {
 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
-    return `Tie game. No points awarded. You both played ${computerSelection}.
+    return `
+    Tie game. No points awarded.
+    You both played ${computerSelection}.
     ${getScores()}`;
   } else {
     if (
@@ -39,7 +41,9 @@ function playRound(playerSelection, computerSelection) {
         resetScores();
         return endReturnValue;
       }
-      return `You win! ${playerSelection} beats ${computerSelection}! ${getScores()}`;
+      return `
+      You win! ${playerSelection} beats ${computerSelection}!
+      ${getScores()}`;
     } else {
       incrementComputerScore();
       if (checkIfRoundLimitReached()) {
@@ -47,7 +51,9 @@ function playRound(playerSelection, computerSelection) {
         resetScores();
         return endReturnValue;
       }
-      return `You lose. ${computerSelection} beats ${playerSelection}. ${getScores()}`;
+      return `
+      You lose. ${computerSelection} beats ${playerSelection}.
+      ${getScores()}`;
     }
   }
 }
@@ -75,9 +81,14 @@ function resetScores() {
 }
 
 function getEndGameText() {
-  return `Game End. Your score: ${playerScore}
-  Computer score: ${computerScore} - 
-  ${getWinner()}`;
+  let endGameText = `
+  Game End.
+  Your score: ${playerScore}
+  Computer score: ${computerScore}
+  ${getWinner()}
+  `;
+
+  return endGameText;
 }
 
 selectionBtns.forEach((btn) =>

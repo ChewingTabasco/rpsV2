@@ -25,3 +25,7 @@ body {
   height: 75px;
   font-size: large;
 }
+
+#game-display {
+  white-space: pre;
+}
