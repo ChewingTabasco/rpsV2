@@ -42,7 +42,7 @@ ${getScores()}`;
         return endReturnValue;
       }
       return `
-You win!
+You win the round!
 ${playerSelection} beats ${computerSelection}!
 ${getScores()}`;
     } else {
@@ -53,7 +53,7 @@ ${getScores()}`;
         return endReturnValue;
       }
       return `
-You lose.
+You lose the round.
 ${computerSelection} beats ${playerSelection}.
 ${getScores()}`;
     }
