@@ -16,7 +16,7 @@ body {
   width: 750px;
   border: 2px solid;
   border-radius: 5px;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding: 5px;
 }
 
@@ -29,4 +29,5 @@ body {
 #game-display {
   white-space: pre;
   font-size: large;
+  border: 2px solid red;
 }
